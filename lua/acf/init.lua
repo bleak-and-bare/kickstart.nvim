@@ -17,6 +17,9 @@ vim.opt.expandtab = true
 -- number of spaces for a tab
 vim.opt.tabstop = 4
 
+-- do not display white chars
+vim.opt.list = false
+
 -- number of spaces for indentation
 vim.opt.shiftwidth = 4
 
