@@ -2,6 +2,8 @@ require 'acf.dap'
 require 'acf.keymaps'
 require 'acf.commands'
 require 'acf.blink'
+require 'acf.filetype'
+require 'acf.lspconfig'
 
 local colorscheme = require 'acf.colorscheme'
 colorscheme.setupTheme()
@@ -37,6 +39,9 @@ vim.api.nvim_create_autocmd('User', {
     vim.opt.laststatus = 3
   end,
 })
+
+-- use system cipboard
+vim.opt.clipboard:append 'unnamedplus'
 
 -- make file explorer follow code buffer
 require('neo-tree').setup {

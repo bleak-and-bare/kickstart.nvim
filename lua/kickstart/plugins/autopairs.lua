@@ -3,7 +3,7 @@
 
 return {
   'windwp/nvim-autopairs',
-  dependencies = { 'nvim-cmp/blink.cmp' },
+  dependencies = { 'saghen/blink.cmp' },
   event = 'InsertEnter',
   opts = {
     map_cr = false,
