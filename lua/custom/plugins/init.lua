@@ -4,6 +4,18 @@
 
 return {
   {
+    'mrcjkb/rustaceanvim',
+    version = '^8', -- Recommended
+    lazy = false,
+  },
+  {
+    'L3MON4D3/LuaSnip',
+    version = 'v2.*',
+    dependencies = {
+      { 'mlaursen/vim-react-snippets', opts = {} },
+    },
+  },
+  {
     'leoluz/nvim-dap-go',
     config = function()
       local dap_go = require 'dap-go'
@@ -204,5 +216,26 @@ return {
         kind = 'floating',
       }
     end,
+  },
+  {
+    'linux-cultist/venv-selector.nvim',
+    dependencies = {
+      'neovim/nvim-lspconfig',
+      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim',
+    },
+    ft = 'python',
+    config = function()
+      require('venv-selector').setup {
+        settings = {
+          options = {
+            activate_clear_on_switch = true,
+          },
+        },
+      }
+    end,
+    keys = {
+      { '<leader>vs', '<cmd>VenvSelect<cr>', desc = 'Select VirtualEnv' },
+    },
   },
 }
